@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block title %}
+<title>Bridi Bros Painting</title>
+{% endblock title %}
+
+{% block navbar %}
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <div class="row">
+            <div class="logoclass">
+              <img class='logo img-fluid' src="{% static 'img/bridilogo.jpeg' %}">
+            </div>
+            <h3 class="masthead-brand" style="margin-right:5%; height:70%;margin-top:5%">Bridi Bros</h3>
+            <nav class="nav nav-masthead justify-content-center" style="height:70%;margin-top:5%">
+              <a class="nav-link active" href="{% url 'home' %}">Home</a>
+              <a class="nav-link" href="{% url 'galery' %}">Gallery</a>
+              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            </nav>
+        </div>
+        </div>
+      </header>
+{% endblock navbar %}
+{% block content %}
+<style>
+    .container {position:relative;}
+    .container video {
+        position: relative;
+        z-index: 0;
+    }
+    .overlay{
+        position: absolute;
+        top:30%;
+        left:5%;
+        width:90%;
+        z-index:1;
+    }
+    p {
+        color: yellow;
+    }
+
+</style>
+<div class="container">
+    <video src="static/videos/v2.mp4" width="100%" autoplay muted loop>
+        Your Browser does not support this media right now
+    </video>
+    <div class="overlay">
+    <h1 class="cover-heading">BRIDI BROS Painting</h1>
+    <p class="lead">Renewal of your home, office or shop. Make it more attractive and pleasant for you and your guests.</p>
+    </div>
+</div>
+<p class="lead" style="margin:5%">
+      <a href="{% url 'galery' %}" class="btn btn-lg btn-secondary">Gallery</a>
+    </p>
+{% endblock content %}
+</div>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+      {% load bootstrap4 %}
+      {% block title %}
+      {% endblock title %}
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+    {% load static %}
+    <link rel="shortcut icon" href="{% static 'img/favicon_io/favicon.ico' %}">
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css/cover.css' %}" rel="stylesheet">
+    <style>
+      .logoclass {
+        position: relative;
+        width: 10%;
+        height: 10%;
+        margin-left:0%;
+        margin-right:5%;
+        min-width:100px;
+      }
+      .logo {
+        width:100%;
+        height: 100%;
+      }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+  </head>
+  <body class="text-center">
+{% block navbar %}
+{% endblock navbar %}
+{% bootstrap_messages %}
+
+
+  <main role="main" class="inner cover">
+{% block content %}
+{% endblock content%}
+
+  </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>Bridi Bros Painting <a href="{% url 'contact' %}">Send a query</a> or call us: 555-5555555</p>
+        </div>
+      </footer>
+</body>
+</html>
