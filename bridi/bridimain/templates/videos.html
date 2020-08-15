@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Videos</title>
+{% endblock title %}
+
+{% block navbar %}
+    <a class="nav-link" href="{% url 'home' %}">Home</a>
+    <a class="nav-link" href="{% url 'galery' %}">Gallery</a>
+    <a class="nav-link active" href="{% url 'videos' %}">Videos</a>
+    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+{% endblock navbar %}
+
+
+{% block content %}
+
+{% for e in videos %}
+    <div class="row w-100 mt-4 justify-content-center">
+        <video src="./{{ caminho }}/{{ e }}" muted height="480" controls>
+
+        </video>
+    </div>
+{% endfor %}
+
+{% endblock content %}

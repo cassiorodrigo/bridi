@@ -7,22 +7,10 @@
 {% endblock title %}
 
 {% block navbar %}
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <div class="row">
-            <div class="logoclass">
-              <img class='logo' src="{% static 'img/bridilogo.jpeg' %}">
-            </div>
-            <h3 class="masthead-brand" style="margin-right:5%; height:70%;margin-top:5%">Bridi Bros</h3>
-            <nav class="nav nav-masthead justify-content-center" style="height:70%;margin-top:5%">
-              <a class="nav-link " href="{% url 'home' %}">Home</a>
-              <a class="nav-link" href="{% url 'galery' %}">Gallery</a>
-              <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
-            </nav>
-        </div>
-        </div>
-      </header>
+    <a class="nav-link" href="{% url 'home' %}">Home</a>
+    <a class="nav-link" href="{% url 'galery' %}">Gallery</a>
+    <a class="nav-link" href="{% url 'videos' %}">Videos</a>
+    <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
 {% endblock navbar %}
 
 {% block content %}
@@ -33,7 +21,7 @@
     {{ form.as_table }}
     </table>
 
-    {% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
+    {% bootstrap_button "Send" button_type="submit" button_class="btn-primary" %}
     {% bootstrap_button "Clear" button_type="reset" button_class="btn-secondary" %}
 
 </form>

@@ -11,13 +11,13 @@
       {% endblock title %}
 
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
     {% load static %}
     <link rel="shortcut icon" href="{% static 'img/favicon_io/favicon.ico' %}">
-
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
     <!-- Bootstrap core CSS -->
-<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-<link href="{% static 'css/cover.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
     <style>
       .logoclass {
         position: relative;
@@ -37,8 +37,23 @@
     <!-- Custom styles for this template -->
   </head>
   <body class="text-center">
-{% block navbar %}
-{% endblock navbar %}
+
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+          <div class="inner">
+            <div class="row">
+              <div class="logoclass">
+                <img class='logo' src="{% static 'img/bridilogo.jpeg' %}">
+              </div>
+              <h3 class="masthead-brand" style="margin-right:5%; height:70%;margin-top:5%">Bridi Bros</h3>
+              <nav class="nav nav-masthead justify-content-center w-100" style="height:70%;margin-top:5%">
+                {% block navbar %}
+                {% endblock navbar %}
+              </nav>
+          </div>
+          </div>
+        </header>
+
 {% bootstrap_messages %}
 
 

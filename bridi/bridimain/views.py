@@ -14,8 +14,13 @@ def galery(request):
     caminho = os.fspath('bridimain/static/img')
     imagens = list((os.walk(caminho)))
     novalistaimagens = []
-    for i in imagens[0][2]:
-        print(i)
+
 
     return render(request, 'galery.html', {"caminho":'static/img', "imagens":imagens[0][2]})
-# Create your views here.
+
+
+def videos(request):
+    caminho = os.fspath('bridimain/static/videos')
+    videos = list((os.walk(caminho)))
+    novalistaimagens = []
+    return render(request, "videos.html", {"caminho":"static/videos", "videos":videos[0][2]})
