@@ -14,10 +14,18 @@
 {% endblock navbar %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+        <iframe class="w-100 mt-4" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-80.31623840332033%2C25.70557815811041%2C-80.04981994628908%2C25.91482062206972&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/25.8102/-80.1830">View Larger Map</a></small>
+    </div>
+</div>
+
+
 <form method="post" action="{% url 'home' %}">
     {% csrf_token %}
 
-    <table class="formcontainer">
+    <table class="formcontainer mt-5">
     {{ form.as_table }}
     </table>
 
