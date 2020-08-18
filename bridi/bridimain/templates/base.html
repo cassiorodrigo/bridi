@@ -6,19 +6,14 @@
     <meta name="description" content="Bridi Bros Painting">
     <meta name="author" content="Cassio Rodrigo Peluso">
 
-      {% load bootstrap4 %}
-      {% block title %}
-      {% endblock title %}
-
-
-
     {% load static %}
-    <link rel="shortcut icon" href="{% static 'img/favicon_io/favicon.ico' %}">
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+    {% block title %}
+    {% endblock title %}
+
     <style>
+      body{
+        height:fit-content;
+      }
       .logoclass {
         position: relative;
         width: 10%;
@@ -50,27 +45,38 @@
                 {% block navbar %}
                 {% endblock navbar %}
               </nav>
-          </div>
+            </div>
           </div>
         </header>
 
-{% bootstrap_messages %}
-
 
   <main role="main" class="inner cover my-5">
+
+  {% include 'messages.html' %}
+
 {% block content %}
+
 {% endblock content%}
 
   </main>
 
-      <div>
-        <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Bridi Bros Painting <a href="{% url 'contact' %}">Send a query</a> or call us: 555-5555555</p>
-        </div>
-      </footer>
-
-      </div>
+  <footer class="mastfoot my-auto">
+    <div class="inner">
+      <p>Bridi Bros Painting <a href="{% url 'contact' %}">Send a query</a> or call us: 555-5555555</p>
+    </div>
+  </footer>
 
 </body>
 </html>
+
+{% load bootstrap4 %}
+    <link rel="shortcut icon" href="{% static 'img/favicon_io/favicon.ico' %}">
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/cover.css' %}" rel="stylesheet">
+<script>
+function close_message(){
+  document.querySelector("#msg").remove()
+  }
+</script>

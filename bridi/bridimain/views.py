@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import ContactForm
 import os
 from django.core.mail import send_mail
+from django.contrib import messages
 
 def home(request):
     return render(request, 'home.html', {})
@@ -10,20 +11,24 @@ def contact(request):
     form = ContactForm()
 
     if request.method == "POST":
-        print(request.POST)
         message_name = request.POST['name']
         message_surname = request.POST['surname']
         message_email = request.POST['email']
         message = request.POST['enquery1']
-        print(f'{message_name} {message_surname} enviou um email a partir do {message_email}. \nMensagem: {message}')
+        print(f'{message_name} {message_surname} \nenviou um email a partir do {message_email}. \nMensagem: {message}')
+        try:
+            send_mail(
+                'Teste1',
+                message,
+                message_email,
+                ['cassiorodrigo@gmail.com'],
 
-        send_mail(
-            'Teste1',
-            message,
-            message_email,
-            ['cassiorodrigo@gmail.com'],
+            )
+            messages.success(request, "Message Sent! Thank you for your query.")
+            return redirect('home',)
+        except Exception as e:
+            messages.warning(request, f"Message not Sent. Something whet wrong. Please, try Again soon. {e}")
 
-        )
     return render(request, 'contact.html', {"form":form})
 
 def galery(request):

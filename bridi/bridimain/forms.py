@@ -6,4 +6,4 @@ class ContactForm(forms.Form):
     surname = forms.CharField(label='Surname', max_length=100, )
     email = forms.EmailField(label='Email address', max_length=120,)
     enquery1 = forms.CharField(label='Query', max_length=3000, widget=forms.Textarea,)
-    check = forms.BooleanField()
+    check = forms.BooleanField(label='I agree to be contacted by Bridi Bros Painting ')

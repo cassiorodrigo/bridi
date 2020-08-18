@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
-{% load static %}
+
 
 {% block title %}
 <title>Get in touch</title>
@@ -14,15 +14,19 @@
 {% endblock navbar %}
 
 {% block content %}
-<div class="container">
+<div class="container" role="alert">
+
+
+</div>
+<div class="container w-100">
     <div class="row">
-        <iframe class="w-100 mt-4" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+        <iframe class="mt-4 w-100" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-80.31623840332033%2C25.70557815811041%2C-80.04981994628908%2C25.91482062206972&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=12/25.8102/-80.1830">View Larger Map</a></small>
     </div>
 </div>
 
 
-<form method="post" action="{% url 'home' %}">
+<form method="post">
     {% csrf_token %}
 
     <table class="formcontainer mt-5">
@@ -31,6 +35,13 @@
 
     {% bootstrap_button "Send" button_type="submit" button_class="btn-primary" %}
     {% bootstrap_button "Clear" button_type="reset" button_class="btn-secondary" %}
-
+{% load static %}
 </form>
+
+<style>
+    th{
+      padding-top:1rem;
+      }
+
+</style>
 {% endblock content %}
