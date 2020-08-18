@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bridimain',
     'bootstrap4',
+    'django.core.mail',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +120,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# TODO for final production
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'cassiorodrigo@gmail.com'
+# EMAIL_HOST_PASSWORD = 'adsafasdfsadf'
+# # EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
