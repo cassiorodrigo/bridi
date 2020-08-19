@@ -33,16 +33,14 @@ def contact(request):
 
 def galery(request):
     # caminho = os.walk('bridimain/static/img')
-    caminho = os.fspath('bridimain/static/img')
+    caminho = os.fspath('/home/libertyforever/bridi/bridi/bridimain/static/img/')
     imagens = list((os.walk(caminho)))
-    novalistaimagens = []
 
-
-    return render(request, 'galery.html', {"caminho":'static/img', "imagens":imagens[0][2]})
+    return render(request, 'galery.html', {"caminho":'/img/', "imagens":imagens[0][2]})
 
 
 def videos(request):
-    caminho = os.fspath('bridimain/static/videos')
+    caminho = os.fspath('/home/libertyforever/bridi/bridi/bridimain/static/videos')
     videos = list((os.walk(caminho)))
-    novalistaimagens = []
-    return render(request, "videos.html", {"caminho":"static/videos", "videos":videos[0][2]})
+
+    return render(request, "videos.html", {"caminho":"/videos/", "videos":videos[0][2]})
